@@ -1,7 +1,7 @@
 ---
 title: Barcode Scanner Capacitor Plugin API
 description: Capacitor plugin using Outsystems Barcode libs
-custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/README.md
+custom_edit_url: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-barcode-scanner/blob/main/plugin/src/definitions.ts
 sidebar_label: Barcode Scanner
 ---
@@ -24,28 +24,6 @@ The barcode scanner plugin requires a minimum Android SDK target of 26. This is 
 ```gradle
 ext {
     minSdkVersion = 26
-}
-```
-
-You will need to modify the `allprojects > repositories` section in your `android/build.gradle` file to include the Outsystems repository. Your `android/build.gradle` file should look similar to this after adding the repository.
-
-```gradle
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
-            name 'Azure'
-            credentials {
-                username = "optional"
-                password = ""
-            }
-            content {
-                includeGroup "com.github.outsystems"
-            }
-        }
-    }
 }
 ```
 
@@ -100,7 +78,7 @@ Defines the structure of the result returned from a barcode scan.
 
 Defines the options for configuring a barcode scan.
 
-<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>, scanInstructions?: string, scanButton?: boolean, scanText?: string, cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>, scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>, android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>, }, web?: { showCameraSelection?: boolean, scannerFPS?: number } }</code>
+<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
 
 
 #### CapacitorBarcodeScannerTypeHint
